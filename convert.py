@@ -127,17 +127,17 @@ try:
     # Convert Jupyter notebooks to Markdown
     process_directory(starting_directory)
 
-    # Delete Jupyter notebook files with confirmation
-    delete_items(starting_directory, "files", '.ipynb', combined_filename)
-
     # Combine Markdown files into a single file
     combine_markdown_files(starting_directory, combined_filename)
 
-    # Delete Markdown files (except the combined file) with confirmation
-    delete_items(starting_directory, "files", '.md', combined_filename)
+    # OPTIONAL: Delete Jupyter notebook files with confirmation
+    # delete_items(starting_directory, "files", '.ipynb', combined_filename)
 
-    # Delete all directories and subdirectories with confirmation
-    delete_items(starting_directory, "directories")
+    # OPTIONAL: Delete Markdown files (except the combined file) with confirmation
+    # delete_items(starting_directory, "files", '.md', combined_filename)
+
+    # OPTIONAL: Delete all directories & subdirectories with confirmation
+    # delete_items(starting_directory, "directories")
 except FileNotFoundError as e:
     print(str(e))
 except Exception as e:
